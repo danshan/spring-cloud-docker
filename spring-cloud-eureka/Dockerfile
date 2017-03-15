@@ -1,21 +1,17 @@
 FROM maven:3.3.9-jdk-8
 MAINTAINER Dan <i@shanhh.com>
 
-ENV APP_USER eureka
-ENV DATA_DIR /opt/data
-ENV APP_NAME eureka
+RUN mkdir -p /opt/data
+RUN useradd eureka -m
 
-RUN mkdir -p ${DATA_DIR}
-RUN useradd ${APP_USER} -m
+ADD . /opt/data/spring-cloud-eureka
+RUN chown -R eureka /opt/data/spring-cloud-eureka
 
-ADD . ${DATA_DIR}/${APP_NAME}
-RUN chown -R ${APP_USER} ${DATA_DIR}
+USER erueka
 
-USER ${APP_USER}
-
-WORKDIR ${DATA_DIR}/${APP_NAME}
+WORKDIR /opt/data/spring-cloud-eureka
 RUN mvn clean package
 
 EXPOSE 8761
 
-ENTRYPOINT ["$DATA_DIR/$APP_NAME/bin/entrypoint.sh"]
+ENTRYPOINT ["/opt/data/spring-cloud-eureka/bin/entrypoint.sh"]
