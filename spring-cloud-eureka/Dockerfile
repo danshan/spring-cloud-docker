@@ -17,4 +17,5 @@ WORKDIR ${DATA_DIR}/${APP_NAME}
 RUN mvn clean package
 
 EXPOSE 8761
-ENTRYPOINT ["/opt/data/entrypoint.sh"]
+
+ENTRYPOINT ["$DATA_DIR/$APP_NAME/bin/entrypoint.sh"]
