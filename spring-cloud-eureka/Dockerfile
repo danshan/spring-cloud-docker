@@ -14,4 +14,4 @@ RUN mvn clean package
 
 EXPOSE 8761
 
-ENTRYPOINT ["/opt/data/spring-cloud-eureka/bin/entrypoint.sh"]
+CMD ["java -jar /opt/data/spring-cloud-eureka/target/spring-cloud-eureka.jar"]
