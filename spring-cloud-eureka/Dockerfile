@@ -9,4 +9,4 @@ RUN mvn clean package
 
 EXPOSE 8761
 
-CMD ["java -jar /opt/data/spring-cloud-eureka/target/spring-cloud-eureka.jar"]
+CMD ["$JAVA_HOME/bin/java -jar /opt/data/spring-cloud-eureka/target/spring-cloud-eureka.jar"]
