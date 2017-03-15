@@ -7,7 +7,7 @@ RUN useradd eureka -m
 ADD . /opt/data/spring-cloud-eureka
 RUN chown -R eureka /opt/data/spring-cloud-eureka
 
-USER erueka
+USER eureka
 
 WORKDIR /opt/data/spring-cloud-eureka
 RUN mvn clean package
