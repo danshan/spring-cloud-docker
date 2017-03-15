@@ -1,4 +1,4 @@
-package com.wanda.zuul.gw.eureka;
+package com.shanhh.cloud.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
